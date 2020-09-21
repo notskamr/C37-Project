@@ -15,22 +15,22 @@ var gameOver, restart;
 localStorage["HighestScore"] = 0;
 
 function preload(){
-  trex_running =   loadAnimation("trex1.png","trex3.png","trex4.png");
-  trex_collided = loadAnimation("trex_collided.png");
+  trex_running =   loadAnimation("images/trex1.png","images/trex3.png","images/trex4.png");
+  trex_collided = loadAnimation("images/trex_collided.png");
   
-  groundImage = loadImage("ground2.png");
+  groundImage = loadImage("images/ground2.png");
   
-  cloudImage = loadImage("cloud.png");
+  cloudImage = loadImage("images/cloud.png");
   
-  obstacle1 = loadImage("obstacle1.png");
-  obstacle2 = loadImage("obstacle2.png");
-  obstacle3 = loadImage("obstacle3.png");
-  obstacle4 = loadImage("obstacle4.png");
-  obstacle5 = loadImage("obstacle5.png");
-  obstacle6 = loadImage("obstacle6.png");
+  obstacle1 = loadImage("images/obstacle1.png");
+  obstacle2 = loadImage("images/obstacle2.png");
+  obstacle3 = loadImage("images/obstacle3.png");
+  obstacle4 = loadImage("images/obstacle4.png");
+  obstacle5 = loadImage("images/obstacle5.png");
+  obstacle6 = loadImage("images/obstacle6.png");
   
-  gameOverImg = loadImage("gameOver.png");
-  restartImg = loadImage("restart.png");
+  gameOverImg = loadImage("images/gameOver.png");
+  restartImg = loadImage("images/restart.png");
 }
 
 function setup() {
@@ -82,7 +82,7 @@ function draw() {
     score = score + Math.round(getFrameRate()/60);
     ground.velocityX = -(6 + 3*score/100);
   
-    if(keyDown("space") && trex.y >= 159) {
+    if(keyDown("space") || keyDown("UP_ARROW") && trex.y >= 159) {
       trex.velocityY = -12;
     }
   
