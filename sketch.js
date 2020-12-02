@@ -31,6 +31,8 @@ function preload(){
   
   gameOverImg = loadImage("images/gameOver.png");
   restartImg = loadImage("images/restart.png");
+
+  bgImg = loadImage("images/sky.jpg")
 }
 
 function setup() {
@@ -75,7 +77,7 @@ function draw() {
 
   gameOver.position.x = restart.position.x = camera.x
 
-  background(255);
+  background(bgImg);
   text("Score: "+ score, 500,50);
   
   if (gameState===PLAY){
